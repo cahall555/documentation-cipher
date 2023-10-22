@@ -1,0 +1,64 @@
+---
+import { io } from "socket.io-client";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam&display=swap"
+      rel="stylesheet"
+    />
+    <title>Documentation Cypher</title>
+  </head>
+  <body class="bg-cream">
+    <div class="flex flex-col w-full m-16 text-center items-center">
+      <h1 class="text-darkblue font-kalam text-6xl font-semibold">
+        How can I help?
+      </h1>
+      <button
+        class="bg-blue text-cream text-lg p-8 rounded-xl font-kalam"
+        id="question-btn">Question</button
+      ><br /><br /><br />
+      <input type="text" id="question-text" Placeholder="Question" />
+      <div id="output" class="h-48 w-96 bg-purple rounded-xl text-cream"></div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js"
+    ></script>
+    <script>
+      const sio = io({ autoConnect: false });
+
+      //sio.on('connect', () => {
+      //	console.log('Client connected');
+      //});
+
+      document.getElementById("question-btn").addEventListener("click", () => {
+        console.log("button clicked");
+        const question = document.getElementById("question-text").value;
+        console.log(question);
+
+        sio.connect();
+        console.log("client connected");
+
+        sio.on("connect", () => {
+          sio.emit("handle_query", question);
+        });
+
+        sio.on("answer", (answer) => {
+          console.log(answer["answer"]);
+          document.getElementById("output").innerHTML = answer["answer"];
+        });
+      });
+
+      sio.on("disconnect", () => {
+        console.log("Client disconnected");
+      });
+    </script>
+  </body>
+</html>
