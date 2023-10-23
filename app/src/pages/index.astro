@@ -28,37 +28,6 @@ import { io } from "socket.io-client";
       <input type="text" id="question-text" Placeholder="Question" />
       <div id="output" class="h-48 w-96 bg-purple rounded-xl text-cream"></div>
     </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js"
-    ></script>
-    <script>
-      const sio = io({ autoConnect: false });
-
-      //sio.on('connect', () => {
-      //	console.log('Client connected');
-      //});
-
-      document.getElementById("question-btn").addEventListener("click", () => {
-        console.log("button clicked");
-        const question = document.getElementById("question-text").value;
-        console.log(question);
-
-        sio.connect();
-        console.log("client connected");
-
-        sio.on("connect", () => {
-          sio.emit("handle_query", question);
-        });
-
-        sio.on("answer", (answer) => {
-          console.log(answer["answer"]);
-          document.getElementById("output").innerHTML = answer["answer"];
-        });
-      });
-
-      sio.on("disconnect", () => {
-        console.log("Client disconnected");
-      });
-    </script>
+    <script type="module" src="/client.js"></script>
   </body>
 </html>
