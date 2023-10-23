@@ -6,6 +6,13 @@ run: `gunicorn -k eventlet -w 1 --reload app:app` to start python socketio
 
 To keep frontend code looking clean run `pnpm prettier --write . --plugin=prettier-plugin-astro`
 
+#### docker
+
+run `docker build -t app . ` and `docker run -d --name app -p 8000:8000 app`
+
+Helpful
+`docker logs app`, `docker rm [NAME]`
+
 ## ToDo's
 
 #### Must haves
