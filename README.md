@@ -6,6 +6,13 @@ run: `gunicorn -k eventlet -w 1 --reload app:app` to start python socketio
 
 To keep frontend code looking clean run `pnpm prettier --write . --plugin=prettier-plugin-astro`
 
+#### docker
+
+run `docker build -t app . ` and `docker run -d --name app -p 8000:8000 app`
+
+Helpful
+`docker logs app`, `docker rm [NAME]`
+
 ## ToDo's
 
 #### Must haves
@@ -15,8 +22,7 @@ To keep frontend code looking clean run `pnpm prettier --write . --plugin=pretti
      - make chat scrollable [figma](https://www.figma.com/file/S7j0TsmtRqde6y8DR2NIpq/document-cypher?type=design&node-id=0%3A1&mode=design&t=KO9d9XwnjJCCykbk-1) 
 * Separate Javascript from HTML
      - Client js in public directory should be updated.
-* Create a docker container - Will this help with deployment?
-* Deploy - Discovery required
+* Deploy - Discovery required [review](https://medium.com/containers-on-aws/building-a-socket-io-chat-app-and-deploying-it-using-aws-fargate-86fd7cbce13f)
 * Update readme files
 
 #### Nice to haves

@@ -6,6 +6,9 @@ static/
 # dependencies
 node_modules/
 
+# app documentation
+notion/
+
 # logs
 npm-debug.log*
 yarn-debug.log*
