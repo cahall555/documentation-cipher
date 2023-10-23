@@ -20,8 +20,6 @@ Helpful
 * update frontend UI
      - Preserve history with ongoing chat.
      - make chat scrollable [figma](https://www.figma.com/file/S7j0TsmtRqde6y8DR2NIpq/document-cypher?type=design&node-id=0%3A1&mode=design&t=KO9d9XwnjJCCykbk-1) 
-* Separate Javascript from HTML
-     - Client js in public directory should be updated.
 * Deploy - Discovery required [review](https://medium.com/containers-on-aws/building-a-socket-io-chat-app-and-deploying-it-using-aws-fargate-86fd7cbce13f)
 * Update readme files
 
