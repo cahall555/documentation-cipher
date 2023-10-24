@@ -1,4 +1,5 @@
 ---
+import UserChat from "../components/UserChat.astro";
 import { io } from "socket.io-client";
 ---
 
@@ -11,23 +12,33 @@ import { io } from "socket.io-client";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Kalam&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kalam&family=Kanit&display=swap"
       rel="stylesheet"
     />
     <title>Documentation Cypher</title>
   </head>
-  <body class="bg-cream">
-    <div class="flex flex-col w-full m-16 text-center items-center">
-      <h1 class="text-darkblue font-kalam text-6xl font-semibold">
-        How can I help?
-      </h1>
-      <button
-        class="bg-blue text-cream text-lg p-8 rounded-xl font-kalam"
-        id="question-btn">Question</button
-      ><br /><br /><br />
-      <input type="text" id="question-text" Placeholder="Question" />
-      <div id="output" class="h-48 w-96 bg-purple rounded-xl text-cream"></div>
+  <body class="bg-gradient-to-t from-darkgreen to-lightgreen overflow-x-clip">
+    <div
+      class="h-screen w-full overflow-x-clip rounded-[48px] ml-48 bg-background"
+    >
+      <div class="flex flex-col w-full m-16 text-center items-center">
+        <UserChat title="Me: " body="a question" />
+        <div id="output" class="h-48 w-96 bg-pink rounded-xl text-lightgreen">
+        </div>
+        <div class="flex flex-row gap-2 mt-8">
+          <input
+            type="text"
+            id="question-text"
+            Placeholder="Question"
+            class="bg-background drop-shadow-lg rounded-full border-2 border-gold text-pink font-kalam p-4 font-semibold text-xl"
+          />
+          <button
+            class="bg-gold text-background text-xl px-8 py-2 rounded-xl font-kalam font-semibold rounded-full"
+            id="question-btn">Send</button
+          >
+        </div>
+        <script type="module" src="/client.js"></script>
+      </div>
     </div>
-    <script type="module" src="/client.js"></script>
   </body>
 </html>
