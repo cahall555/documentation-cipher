@@ -17,6 +17,7 @@ def disconnect(sid):
 @sio.event
 def handle_query(sid, query):
     print('question ', query)
+    sio.emit('question', {'question': query}, to=sid)
     answer = ask_question(query)
     print('answer ', answer)
     sio.emit('answer', {'answer': answer}, to=sid)
