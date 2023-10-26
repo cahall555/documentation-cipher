@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  body: string;
+}
+
+const { title, body } = Astro.props;
+---
+
+<li class="list-none h-fit w-full p-8 align-center text-left">
+  <div class="flex flex-row gap-8">
+    <h2 class="font-kanit text-gold font-semibold text-2xl">
+      {title}
+    </h2>
+
+    <p class="font-kanit text-gold text-xl">
+      {body}
+    </p>
+  </div>
+</li>
