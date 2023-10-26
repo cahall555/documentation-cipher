@@ -1,7 +1,6 @@
 ---
-import UserChat from "../components/UserChat.astro";
-import AIChat from "../components/AIChat.astro";
 import { io } from "socket.io-client";
+let question = "";
 ---
 
 <html lang="en">
@@ -29,12 +28,11 @@ import { io } from "socket.io-client";
       class="h-screen w-full overflow-x-clip rounded-[48px] ml-48 -mt-60 bg-background"
     >
       <div id="chat" class="flex flex-col w-full m-16 text-center items-center">
-        <ul class="text-xl font-kanit text-gold" id="chat-messages">
-        <UserChat title="Me: " />
-	</ul>
-        <AIChat title="AI: " body="response" />
-        <div id="output" class="h-48 w-96 bg-pink rounded-xl text-lightgreen">
-        </div>
+        <ul
+          id="chat-container"
+          class="hidden list-none h-fit w-full p-8 align-center text-left text-xl"
+        >
+        </ul>
         <div class="flex flex-row gap-2 mt-8">
           <input
             type="text"

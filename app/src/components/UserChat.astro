@@ -1,10 +1,10 @@
 ---
 interface Props {
   title: string;
-  body: string;
+  message?: string;
 }
 
-const { title, body } = Astro.props;
+const { title, message } = Astro.props;
 ---
 
 <li
@@ -16,7 +16,7 @@ const { title, body } = Astro.props;
     </h2>
 
     <p class="font-kalam align-bottom text-lightgreen text-xl">
-      {body}
+      {message}
     </p>
   </div>
 </li>
