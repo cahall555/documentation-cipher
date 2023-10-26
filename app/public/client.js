@@ -41,7 +41,7 @@ sio.on("question", (question) => {
 sio.on("answer", (answer) => {
   console.log(answer["answer"]);
   appendMessage(
-    "AI",
+    "Document Bot",
     answer["answer"],
     "chat-container",
     "text-gold font-kanit p-8",

@@ -1,0 +1,34 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
+---
+
+<Astronav>
+  <div class="flex">
+    <MenuIcon class="w-8 h-8 fill-background text-background" />
+  </div>
+  <div>
+    <MenuItems class="hidden flex">
+      <ul>
+        <li>
+          <a href="#"
+            ><h2 class="font-kanit text-background pt-2 text-2xl">
+              Documentation
+            </h2></a
+          >
+        </li>
+        <li>
+          <a href="#">
+            <h2 class="font-kanit text-background pt-2 text-2xl">History</h2>
+          </a>
+        </li>
+      </ul>
+    </MenuItems>
+  </div>
+</Astronav>
