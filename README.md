@@ -1,5 +1,12 @@
 # documentation-cipher
 
+## Project description
+
+On boarding new employees, getting them trained in their job function, and ensuring they understand company policies and procedures is a large undertaking. The burden continues as an employee becomes more tenured. Documentation changes overtime, and it is important to continuously reference documentation to ensure the needs of different departments are met. Creating a tool that will allow team members to quickly search company documentation using questions written in natural language will greatly speed up the time an employee spends searching for the answer, and will increase compliance with updated documentation for tenured employees.
+
+By using tools available through LangChain and Open AI, this project strives to help employees process company documentation quickly, and in a manner similar to chatGPT. This proof of concept uses Notion as the documentation tool.
+
+
 #### Development notes
 
 run: `gunicorn -k eventlet -w 1 --reload app:app` to start python socketio
