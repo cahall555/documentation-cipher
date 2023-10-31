@@ -22,7 +22,7 @@ Helpful
 
 #### Test commands
 
-for python run `python3 -m unittest [FILENAE] (ie. test_app.py`
+for python run `python3 -m unittest [FILENAME] (ie. test_app.py)`
 
 for playwrite (frontend) `pnpm playwright test [FILENAME] (ie index.spec.ts)`
 
@@ -32,7 +32,6 @@ for playwrite (frontend) `pnpm playwright test [FILENAME] (ie index.spec.ts)`
 * Write more tests
 * Deploy - Discovery required [review](https://medium.com/containers-on-aws/building-a-socket-io-chat-app-and-deploying-it-using-aws-fargate-86fd7cbce13f)
 * Update readme files
-* Make UI mobile friendly
 
 #### Backlog
 * Show documents referenced under response
