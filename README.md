@@ -20,6 +20,12 @@ run `docker build -t app . ` and `docker run -d --name app -p 8000:8000 app`
 Helpful
 `docker logs app`, `docker rm [NAME]`
 
+#### Test commands
+
+for python run `python3 -m unittest [FILENAE] (ie. test_app.py`
+
+for playwrite (frontend) `pnpm playwright test [FILENAME] (ie index.spec.ts)`
+
 ## ToDo's
 
 #### Must haves
