@@ -36,8 +36,6 @@ for playwrite (frontend) `pnpm playwright test [FILENAME] (ie index.spec.ts)`
 #### Backlog
 * Show documents referenced under response
 * persist state when user refreshes browser
-* Send when enter is pressed or button is clicked
-* add gap on right hand side of text
 * authentication 
 * update document reader to pull live from Notion - Discovery required
 * Show users history

@@ -39,6 +39,7 @@ sio.on("question", (question) => {
 
 // Answer listener
 sio.on("answer", (answer) => {
+  document.getElementById("loading").classList.add("hidden");
   console.log(answer["answer"]);
   appendMessage(
     "Document Bot",
@@ -52,15 +53,25 @@ document.getElementById("question-btn").addEventListener("click", () => {
   console.log("Button clicked");
   const question = document.getElementById("question-text").value;
   document.getElementById("question-text").value = "";
-  //   document.getElementById("output").innerHTML = "Loading..."; TODO: Find a place for loading, maybe create animation
   console.log(question);
-
+  document.getElementById("loading").classList.remove("hidden");
   // If socket is not connected, establish a connection
   if (!sio.connected) {
     sio.connect();
   }
   // Emit the question
   sio.emit("handle_query", question);
+});
+
+document.getElementById("question-text").addEventListener("keyup", (event) => {
+  console.log("enter pressed");
+  if (
+    event.key === "Enter" &&
+    document.getElementById("question-text").value.trim() !== ""
+  ) {
+    event.preventDefault();
+    document.getElementById("question-btn").click();
+  }
 });
 
 // Connect to the server when the page loads or at an appropriate time.
