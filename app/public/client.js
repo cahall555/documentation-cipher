@@ -63,5 +63,14 @@ document.getElementById("question-btn").addEventListener("click", () => {
   sio.emit("handle_query", question);
 });
 
+document.getElementById("question-text").addEventListener("keyup", (event) => {
+	console.log("enter pressed");
+	if (event.key === "Enter" && document.getElementById("question-text").value.trim() !== "") {
+		event.preventDefault();
+		document.getElementById("question-btn").click();
+	}
+});
+
+
 // Connect to the server when the page loads or at an appropriate time.
 sio.connect();
