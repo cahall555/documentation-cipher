@@ -8,12 +8,5 @@
     "esModuleInterop": true,
     "strict": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.astro",
-    "../client.ts",
-    "src/client.ts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.astro"]
 }
