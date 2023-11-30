@@ -1,5 +1,5 @@
 import socketio
-from main import ask_question
+from main import ask_question, embed
 
 sio = socketio.Server()
 app = socketio.WSGIApp(sio, static_files={
@@ -8,6 +8,7 @@ app = socketio.WSGIApp(sio, static_files={
 
 @sio.event
 def connect(sid, environ):
+    embed()
     print('connect ', sid)
 
 @sio.event

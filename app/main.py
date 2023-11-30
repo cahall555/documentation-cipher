@@ -12,7 +12,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains.question_answering import load_qa_chain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-def ask_question(question):
+def embed():
     load_dotenv()
 
     api_key = os.getenv('OPENAI_API_KEY')
@@ -23,6 +23,11 @@ def ask_question(question):
     pinecone_env = os.getenv('PINECONE_ENVIRONMENT')
 
     pinecone.init(api_key=pinecone_key, environment=pinecone_env)
+
+
+def ask_question(question):
+    load_dotenv()
+    api_key = os.getenv('OPENAI_API_KEY')
     index_name = "capstone"
 
     llm = OpenAI(openai_api_key = api_key, temperature=0.9)
