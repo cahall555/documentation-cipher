@@ -32,6 +32,7 @@ const Chat = () => {
       };
       setMessages((currentMessages) => [...currentMessages, newMessage]);
     };
+
     // Set up socket event listeners
     sio.on("connect", () => console.log("Client connected"));
     sio.on("disconnect", () => console.log("Client disconnected"));
@@ -58,6 +59,15 @@ const Chat = () => {
     sio.emit("handle_query", questionText);
     setQuestionText("");
   };
+  useEffect(() => {
+    window.clearChat = () => {
+      setMessages([]);
+      localStorage.removeItem("chatMessages");
+    };
+    return () => {
+      delete window.clearChat;
+    };
+  }, []);
 
   return (
     <>
