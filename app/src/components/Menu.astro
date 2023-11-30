@@ -24,11 +24,25 @@ import {
           >
         </li>
         <li>
-          <a href="#">
-            <h2 class="font-kanit text-background pt-2 text-2xl">History</h2>
+          <a href="#" class="clear-history">
+            <h2 class="font-kanit text-background pt-2 text-2xl">
+              Clear History
+            </h2>
           </a>
         </li>
       </ul>
     </MenuItems>
   </div>
+  <script>
+    document
+      .querySelector(".clear-history")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+        if (typeof window.clearChat === "function") {
+          window.clearChat();
+        } else {
+          console.error("clearChat function not yet available");
+        }
+      });
+  </script>
 </Astronav>
