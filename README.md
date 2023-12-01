@@ -9,13 +9,15 @@ By using tools available through LangChain and Open AI, this project strives to 
 
 #### Development notes
 
-run: `gunicorn -k eventlet -w 1 --reload app:app` to start python socketio
+To run application locally cd into app and run `pnpm run build` and then `gunicorn -k eventlet -w 1 --reload app:app` to start python socketio.
+
+Then run `pnpm run preview` and open the preview in the web browser. This application can also be run in a docker container. See docker section below.
 
 To keep frontend code looking clean run `pnpm prettier --write . --plugin=prettier-plugin-astro`
 
 #### docker
 
-run `docker build -t app . ` and `docker run -d --name app -p 8000:8000 app`
+To run in docker cd into app and run`docker build -t app . ` and `docker run -d --name app -p 8000:8000 app`
 
 Helpful
 `docker logs app`, `docker rm [NAME]`
@@ -26,12 +28,6 @@ for python run `python3 -m unittest [FILENAME] (ie. test_app.py)`
 
 for playwrite (frontend) `pnpm playwright test [FILENAME] (ie index.spec.ts)`
 
-## ToDo's
-
-#### Must haves
-* Write more tests
-* Deploy - Discovery required [review](https://medium.com/containers-on-aws/building-a-socket-io-chat-app-and-deploying-it-using-aws-fargate-86fd7cbce13f)
-* Update readme files
 
 #### Backlog
 * Show documents referenced under response
@@ -41,4 +37,4 @@ for playwrite (frontend) `pnpm playwright test [FILENAME] (ie index.spec.ts)`
 * Show frequently asked questions in the organization
 * Collect information from users on if a response was useful. This can be added to a management dashboard to update documentation.
 * Create different ways for users to ask questions  
-
+* Explore ways to make pinecone more efficient.
